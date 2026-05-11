@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>add your concert</title>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><b>memoriae</b></a>
+            </div>
+        </header>
+        <main>
+            <div id="journal-container">
+                <h1>add concert details</h1>
+                <form id="concert-form">
+                    <div>
+                        <label for="who">WHO?</label>
+                        <input type="text" id="who" name="who" placeholder="whose concert did you attend?">
+                        <label for="when">WHEN?</label>
+                        <input type="date" id="when" name="when">
+                    </div>
+                    <div>
+                        <label for="where">LOCATION?</label>
+                        <input type="text" id="where" name="where">
+                        <label for="tourName">TOUR NAME?</label>
+                        <input type="text" id="tourName" name="tourName">
+                    </div>
+                    <!-- used: https://www.w3schools.com/html/html_form_elements.asp-->
+                    <div>
+                        <label for="rating">STAR RATING</label>
+                        <select id="rating" name="rating">
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </div> 
+                    <div>
+                        <label for="notes">REVIEW - max 150 words </label>
+                        <textarea id="notes" name="notes" placeholder="write any memorable moments, notes, or other points..." rows="6" cols="60"></textarea>
+                    </div>
+                    <div>
+                        <label for="polImg">INSERT 3 IMAGES</label>
+                        <input type="file" id="polImg" name="polImg">
+                    </div>
+                    <input type="submit" id="submit" value="create">
+                </form>
+                <div id="concerts"></div>
+            </div>
+        </main>
+        <script src = "form.js"></script>
+    </body>
+</html>
+
+<!-- to do:
+ - need to add required elements ie cannot go to next page without filling in
+ - layout as the columns and rows 
+ - add JS to functionanlity 
+ - required attribute -->
