@@ -13,8 +13,22 @@ function addNewConcert(concert) {
             <p><b>Rating:</b> ${concert.rating}</p>
             <p><b>Notes:</b> ${concert.notes}</p>
         </div>
+        <div class="photo-strip">
+            ${concert.polImg.map (image =>
+                `<img src="${image}" class="concert-photo">`
+            ).join("")}
+        </div>
     `
-} // add image attribute to this too polImg
+} // need to credit photo-strip code bit
+
+/* same as above, but using for.. of loop instead
+let imageHTML = "";
+for(const images of concert.polImg) {
+    imageHTML += `<img src=""${image}">';
+}
+*/
+
+// takes all images in the array to turn into HTML then combine it into one string
 
 
 // loads saved concerts from local storage

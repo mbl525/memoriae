@@ -12,8 +12,8 @@
                 <a href="index.html"><b>memoriae</b></a>
             </div>
         </header>
-        <main>
-            <div id="journal-container">
+        <main class="form-page">
+            <section class="journal-container">
                 <h1>add concert details</h1>
                 <form id="concert-form">
                     <div>
@@ -29,6 +29,8 @@
                         <input type="text" id="tourName" name="tourName">
                     </div>
                     <!-- used: https://www.w3schools.com/html/html_form_elements.asp-->
+
+                    <div class="full-width">
                     <div>
                         <label for="rating">STAR RATING</label>
                         <select id="rating" name="rating">
@@ -44,20 +46,16 @@
                         <textarea id="notes" name="notes" placeholder="write any memorable moments, notes, or other points..." rows="6" cols="60"></textarea>
                     </div>
                     <div>
+                        <!-- allows moultiple images to be uploaded -->
                         <label for="polImg">INSERT 3 IMAGES</label>
-                        <input type="file" id="polImg" name="polImg">
+                        <input type="file" id="polImg" name="polImg" accept="image/*" multiple>
+                    </div>
                     </div>
                     <input type="submit" id="submit" value="create">
                 </form>
                 <div id="concerts"></div>
-            </div>
+            </section>
         </main>
         <script src = "form.js"></script>
     </body>
 </html>
-
-<!-- to do:
- - need to add required elements ie cannot go to next page without filling in
- - layout as the columns and rows 
- - add JS to functionanlity 
- - required attribute -->

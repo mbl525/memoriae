@@ -3,8 +3,17 @@
 let concerts = [] // array to store concert objects
 
 // handles form submission & creates a new concert object
-function createConcert(event) {
+async function createConcert(event) {
     event.preventDefault();
+
+    const imageFiles = document.getElementById("polImg") .files;
+
+    const savedImages = [];
+
+    for (let i = 0; i < imageFiles.length && i < 3; i++) {
+        const imageData = await readImage(imageFiles[i]);
+        savedImages.push(imageData);
+    }
 
     const newConcert = {
         who: document.getElementById("who").value,
@@ -13,7 +22,7 @@ function createConcert(event) {
         tourName: document.getElementById("tourName").value,
         rating: document.getElementById("rating").value,
         notes: document.getElementById("notes").value,
-        polImg: document.getElementById("polImg").value
+        polImg: savedImages
     };
     
     // addNewConcert(newConcert);
@@ -27,6 +36,17 @@ function createConcert(event) {
     document.getElementById("concert-form").reset;
 }
 
+// credit: stack overflow! https://stackoverflow.com/questions/63198902/resolve-promises-one-after-another-for-previewing-image-on-upload
+function readImage(file) {
+    return new Promise(function(resolve) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            resolve(event.target.result);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
 // saves concerts array to local storage
 function saveConcerts() {
     localStorage.setItem("concerts", JSON.stringify(concerts));
@@ -34,15 +54,3 @@ function saveConcerts() {
 
 // add event listener
 document.getElementById("submit").addEventListener("click", e => createConcert(e));
-
-/*
-file.El.addEventListener('change', () => {
-    const fr = new FilerReader();
-    fr.readAsDataURL(fileEl.files[0]);
-    fr.addEventListener("load", () => {
-        const url = fr.result;
-        
-        localStorage.setItem('my-image', url);
-    });
-});
-*/
