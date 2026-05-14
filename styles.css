@@ -1,6 +1,10 @@
 body {
-
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("assets/bubble-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header {
@@ -22,9 +26,9 @@ nav {
     background: linear-gradient(
         to bottom,
         rgba(255,255,255,0.75),
-        rgba(255, 249, 245, 0.45)
+        rgba(240, 173, 218, 0.45)
     );
-    /* glass effect */
+    /* glass effect CREDIT ITTT */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     /* subtle border */
@@ -88,9 +92,12 @@ main {
 }
 
 .journal-coverImg {
-    width: 300px;
+    width: 500px;
     height: 400px;
-    background: #7c9fce;
+    background-image: url("assets/concert-diary.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transform: rotate(3deg);
 }
@@ -113,7 +120,7 @@ main {
     margin: 30px auto 0;
 }
 
-/* journal.html deco under */
+/* styling concert form under */
 
 .form-page {
     min-height: 80vh;
@@ -123,14 +130,14 @@ main {
     padding: 40px;
 }
 
-.journal-container {
+.concert-container {
     width: min(90%, 650px);
     padding: 35px;
     border-radius: 20px;
     background: rgb(255, 217, 234, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15)
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 #concert-form {
@@ -166,17 +173,172 @@ textarea {
     font-size: 42px;
 }
 
+.logo {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
 .logo a {
     text-decoration: none;
     color:#314560;
     text-align: center;
     justify-content: center;
     margin: 0;
+    font-weight: 60px;
     
 }
 
 #submit {
+    width: auto;
     grid-column: 1 / -1;
     justify-self: center;
-    margin-top: 20px;
+    padding: 12px 30px;
+    margin-top: 10px;
+}
+
+/* styling journal.html */
+
+#journal-book {
+    display: flex;
+    width: min(95%, 1100px);
+    height: 700px;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* how to do border of the diary page? */
+.left-page, .right-page {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+    background: repeating-linear-gradient(white, white 28px, #d9d9d9 29px);
+    border-color: #F58CB5;
+}
+
+.spine {
+    width: 30px;
+    background: #f2f2f2;
+}
+
+/*
+.photo-strip {
+    width: 350px;
+    height: 500px;
+    padding: 12px;
+    background: #fffdf9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+} 
+*/
+
+.journal-page .polaroid {
+    position: absolute;
+    width: 140px;
+    height: 170px;
+    padding: 10px;
+    margin-top: 150px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.photo-1 {
+    top: 20px;
+    left: 40px;
+    transform: rotate(-4deg);
+}
+
+.photo-2 {
+    top: 120px;
+    right: 30px;
+    transform: rotate(3eg);
+}
+
+.photo-3 {
+    top: 260px;
+    left: 60px;
+    transform: rotate(-8deg);
+}
+
+.concert-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.journal-tab {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    width: 120px;
+    padding: 18px 12px;
+    text-align: center;
+    text-decoration: none;
+    color:#314560;
+    background:#F58CB5;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+/* profile.html page */
+
+.profile-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 80px;
+    padding: 140px 80px 80px;
+    align-items: start;
+}
+
+.profile-page .diary-preview {
+    width: 100%;
+}
+
+.profile-page .diary-preview img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.profile-page .diary-preview img:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-2deg);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.profile-content h1 {
+    font-size: 50px;
+    color: #314560;
+}
+
+.stats {
+    padding: 35px;
+    border-radius: 24px;
+    background: rgba(235,230,245,0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 4 stats box */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.bottom-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }

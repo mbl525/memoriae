@@ -8,9 +8,9 @@
     </head>
     <body>
         <header>
-            <!-- div class="navbar" didn't work? -->
             <nav>
                 <ul>
+                    <text><b>memoriae</b></text>
                     <li><a href="index.html">home</a></li>
                     <!--want it to scroll down to about section-->
                     <li><a href="index.html">about</a></li>
@@ -19,8 +19,40 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <h1>My Profile</h1>
+        <main class="profile-page">
+            <div class="diary-preview">
+                <a href="journal.html">
+                    <img src="assets/concert-diary.png" alt="journal">
+                </a>
+            </div>
+            <section class="profile-content">
+                <h1>my profile</h1>
+                <div class="stats">
+                    stats here
+                    ill put music player + fav artist + number of concerts
+                    + average star rating
+                </div>
+                <div class="bottom-card">
+                    <div class="fav-artist"></div>
+                    <div class="music-player">
+                        <h3 id="song-title">playing 1 of 3</h3>
+                        <audio id="music-player"></audio>
+                        <div class="progress">
+                            <span id="current-time">0:00</span>
+                            <input type="range" id="seek-slider" min="0" value="0">
+                            <span id="total-time">0:00</span>
+                        </div>
+                        <div class="music-controls">
+                            <button id="prev-btn">⏮</button>
+                            <button id="play-btn">▶</button>
+                            <button id="next-btn">⏭</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+        <script src ="music.js"></script>
     </body>
 </html>
+
+<!-- i want a frutiger aero music player -->

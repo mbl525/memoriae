@@ -2,6 +2,7 @@
 // split the practical into two files, one for form + one for journal/showing data
 
 // adds a concert entry to the page
+/* 
 function addNewConcert(concert) {
     document.getElementById("journal-container").innerHTML +=
     `
@@ -28,14 +29,42 @@ for(const images of concert.polImg) {
 }
 */
 
-// takes all images in the array to turn into HTML then combine it into one string
+const leftPage = document.querySelector(".left-page");
+const rightPage = document.querySelector(".right-page");
 
+function addNewConcert(concert) {
+    leftPage.innerHTML =
+    `
+    <h1> ${concert.tourName}</h1>
+    <p>${concert.notes}</p>
+    `;
+    rightPage.innerHTML =
+    `
+    <div class="info-card">
+        <p><b>Who:</b> ${concert.who}</p>
+        <p><b>When:</b> ${concert.when}</p>
+        <p><b>Where:</b> ${concert.where}</p>
+    </div>
+    <div class="photo-strip">
+
+    ${concert.polImg.map((image, index) =>
+
+        `<div class="polaroid photo-${index + 1}">
+
+            <img src="${image}" class="concert-photo">
+
+        </div>`
+
+    ).join("")}
+    </div>
+    `;
+}
 
 // loads saved concerts from local storage
 function loadSavedConcerts() {
     const existingConcerts = localStorage.getItem("concerts");
     if(existingConcerts !== null) {
-        concerts = JSON.parse(existingConcerts);
+        const concerts = JSON.parse(existingConcerts);
         for (const concert of concerts) {
             addNewConcert(concert);
         }
