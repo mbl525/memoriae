@@ -2,37 +2,30 @@
 // split the practical into two files, one for form + one for journal/showing data
 
 // adds a concert entry to the page
-/* 
-function addNewConcert(concert) {
-    document.getElementById("journal-container").innerHTML +=
-    `
-        <div class="polaroid">
-            <p><b>Who:</b> ${concert.who}</p>
-            <p><b>When:</b> ${concert.when}</p>
-            <p><b>Where:</b> ${concert.where}</p>
-            <p><b>Tour Name:</b> ${concert.tourName}</p>
-            <p><b>Rating:</b> ${concert.rating}</p>
-            <p><b>Notes:</b> ${concert.notes}</p>
-        </div>
-        <div class="photo-strip">
-            ${concert.polImg.map (image =>
-                `<img src="${image}" class="concert-photo">`
-            ).join("")}
-        </div>
-    `
-} // need to credit photo-strip code bit
-
-/* same as above, but using for.. of loop instead
-let imageHTML = "";
-for(const images of concert.polImg) {
-    imageHTML += `<img src=""${image}">';
-}
-*/
 
 const leftPage = document.querySelector(".left-page");
 const rightPage = document.querySelector(".right-page");
 
-function addNewConcert(concert) {
+let currentConcert = 0;
+
+const concerts = JSON.parse(localStorage.getItem("concerts")) || [];
+
+document.getElementById("next-page")
+    .addEventListener("click", nextConcert);
+
+document.getElementById("prev-page")
+    .addEventListener("click", previousConcert);
+
+function displayConcert() {
+
+    const concert = concerts[currentConcert];
+
+    if(concerts.length === 0) {
+        leftPage.innerHTML = "<h2>no concerts yet</h2>"
+        rightPage.innerHTML = "";
+        return;
+    }
+
     leftPage.innerHTML =
     `
     <h1> ${concert.tourName}</h1>
@@ -44,6 +37,7 @@ function addNewConcert(concert) {
         <p><b>Who:</b> ${concert.who}</p>
         <p><b>When:</b> ${concert.when}</p>
         <p><b>Where:</b> ${concert.where}</p>
+        <p><b>Rating:</b> ${concert.rating}</p>
     </div>
     <div class="photo-strip">
 
@@ -60,16 +54,20 @@ function addNewConcert(concert) {
     `;
 }
 
-// loads saved concerts from local storage
-function loadSavedConcerts() {
-    const existingConcerts = localStorage.getItem("concerts");
-    if(existingConcerts !== null) {
-        const concerts = JSON.parse(existingConcerts);
-        for (const concert of concerts) {
-            addNewConcert(concert);
-        }
+function nextConcert() {
+    currentConcert++;
+    if(currentConcert >= concerts.length) {
+        currentConcert = 0;
     }
+    displayConcerts();
 }
 
-// load saved concerts when page loads
-loadSavedConcerts();
+function previousConcert() {
+    currentConcert--;
+    if(currentConcert < 0) {
+        currentConcert = concerts.length - 1;
+    }
+    displayConcert();
+}
+
+displayConcert();

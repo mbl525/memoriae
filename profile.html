@@ -28,19 +28,30 @@
             <section class="profile-content">
                 <h1>my profile</h1>
                 <div class="stats">
-                    stats here
-                    ill put music player + fav artist + number of concerts
-                    + average star rating
+                    <h2>my stats</h2>
+                    <div class="concerts-attend">
+                        <h3>concerts attended</h3>
+                        <p id="concert-count">loading...</p>
+                    </div>
+                    <div class="average-rating">
+                        <h3>average rating</h3>
+                        <p id="average-rating">loading...</p>
+                    </div>
                 </div>
                 <div class="bottom-card">
-                    <div class="fav-artist"></div>
+                    <div class="fav-artist">
+                        <h3>favourite artist</h3>
+                        <p id="fav-artist-name">loading...</p>
+                    </div>
                     <div class="music-player">
-                        <h3 id="song-title">playing 1 of 3</h3>
+                        <h3>now playing...</h3>
+                        <marquee id="song-title">playing 1 of 3</marquee>
+                        <!--<h3 id="song-title">playing 1 of 3</h3>-->
                         <audio id="music-player"></audio>
                         <div class="progress">
                             <span id="current-time">0:00</span>
                             <input type="range" id="seek-slider" min="0" value="0">
-                            <span id="total-time">0:00</span>
+                            <span id="total-time"></span>
                         </div>
                         <div class="music-controls">
                             <button id="prev-btn">⏮</button>

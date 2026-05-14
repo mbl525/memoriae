@@ -319,26 +319,119 @@ textarea {
 }
 
 .profile-content h1 {
-    font-size: 50px;
+    font-size: 40px;
     color: #314560;
 }
 
 .stats {
-    padding: 35px;
-    border-radius: 24px;
+    padding: 15px;
+    border-radius: 18px;
+    max-width: 700px;
+    min-height: 100px;
     background: rgba(235,230,245,0.9);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* 4 stats box */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stats h2 {
+    font-size: 20px;
+}
+
+.stats h3 {
+    font-size: 16px;
 }
 
 .bottom-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
 }
+
+/* decorating music player ! (same bg as nav) */
+.music-player {
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 280px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.55),
+        rgba(235,230,245, 0.25)
+    );
+    /* glass effect CREDIT ITTT */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* subtle border */
+    border: 1px solid rgba(255,255,255,0.5);
+    /* soft shadow */
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.12),
+
+        inset 0 1px 1px rgba(255,255,255,0.7);
+}
+/* pointer not working */
+.music-player .music-controls {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.music-controls .button {
+    background-color:#F58CB5;
+    color:#f2f2f2;
+    padding: 15px 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* not showing up??*/
+.song-title {
+    background-color: #f2f2f2;
+}
+
+.fav-artist {
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 280px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.55),
+        rgba(235,230,245, 0.25)
+    );
+    /* glass effect CREDIT ITTT */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* subtle border */
+    border: 1px solid rgba(255,255,255,0.5);
+    /* soft shadow */
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.12),
+
+        inset 0 1px 1px rgba(255,255,255,0.7);
+}
+
+/* marquee current
+.music-player {
+    width: 450px;
+    line-height: 50px;
+    background-color: #f2f2f2;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.music-player h {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes music-player {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(-100%, 0);}
+}
+*/
