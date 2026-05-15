@@ -7,18 +7,16 @@
         <link href="styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <a href="index.html"><b>memoriae</b></a>
-            </div>
-        </header>
         <main class="form-page">
             <section class="concert-container">
+                <div class="logo">
+                    <a href="index.html"><b>memoriae</b></a>
+                </div>
                 <h1>add concert details</h1>
                 <form id="concert-form">
                     <div>
                         <label for="who">WHO?</label>
-                        <input type="text" id="who" name="who" placeholder="whose concert did you attend?">
+                        <input type="text" id="who" name="who">
                         <label for="when">WHEN?</label>
                         <input type="date" id="when" name="when">
                     </div>
@@ -43,7 +41,7 @@
                     </div> 
                     <div>
                         <label for="notes">REVIEW - max 150 words </label>
-                        <textarea id="notes" name="notes" placeholder="write any memorable moments, notes, or other points..." rows="6" cols="60"></textarea>
+                        <textarea id="notes" name="notes" placeholder="write about any memorable moments, notes, or other points..." rows="6" cols="60"></textarea>
                     </div>
                     <div class="polaroid">
                         <!-- allows moultiple images to be uploaded -->

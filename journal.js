@@ -37,7 +37,7 @@ function displayConcert() {
         <p><b>Who:</b> ${concert.who}</p>
         <p><b>When:</b> ${concert.when}</p>
         <p><b>Where:</b> ${concert.where}</p>
-        <p><b>Rating:</b> ${concert.rating}</p>
+        <p><b>Rating:</b> ${"★".repeat(Number(concert.rating))}</p>
     </div>
     <div class="photo-strip">
 
@@ -59,7 +59,7 @@ function nextConcert() {
     if(currentConcert >= concerts.length) {
         currentConcert = 0;
     }
-    displayConcerts();
+    displayConcert();
 }
 
 function previousConcert() {

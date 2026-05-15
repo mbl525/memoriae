@@ -1,6 +1,8 @@
 // https://github.com/IM-WADD/Lecture-Examples/blob/main/Lectures/W8Lecture1/storeClocksComplete/main.js
 
-let concerts = [] // array to store concert objects
+// let concerts = [] // array to store concert objects
+
+let concerts = JSON.parse(localStorage.getItem("concerts")) || [];
 
 // handles form submission & creates a new concert object
 async function createConcert(event) {
