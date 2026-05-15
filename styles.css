@@ -4,6 +4,17 @@
 
     font-family: coolvetica;
     src: url(assets/coolvetica-rg.otf);
+
+    font-family: kaoly;
+    src: url(assets/kaoly.ttf);
+}
+
+.inital {
+    background-image: url(assets/bubbles-music-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
@@ -217,7 +228,7 @@ textarea {
     text-align: center;
     justify-content: center;
     font-weight: 60px;
-    
+    font-family: kaoly;
 }
 
 .concert-container .logo {
@@ -232,7 +243,7 @@ textarea {
     margin-top: 10px;
 }
 
-/* styling journal.html */
+/* STYLING journal.html */
 
 #journal-book {
     display: flex;
@@ -316,6 +327,20 @@ textarea {
     transform: scale(1.1, 1.1);
 }
 
+/* decorating journal arrows */
+#prev-page, #next-page {
+    background:#F58CB5;
+    border: none;
+    border-radius: 80px;
+    color:#FFF9F5;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* profile.html page */
 
 .profile-page {
@@ -390,20 +415,6 @@ textarea {
     transform: translateX(-50%);
     margin-bottom: 10px;
 
-}
-
-/* decorating journal arrows */
-#prev-page, #next-page {
-    background:#F58CB5;
-    border: none;
-    border-radius: 80px;
-    color:#FFF9F5;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 /* decorating music player ! (same bg as nav) */
