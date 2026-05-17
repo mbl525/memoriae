@@ -457,6 +457,19 @@ textarea {
     cursor: pointer;
 }
 
+/*using ai to have accessible reader but not visually*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* not showing up??*/
 .song-title {
     background-color: #f2f2f2;

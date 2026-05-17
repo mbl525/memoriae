@@ -1,3 +1,11 @@
+<!--
+This code is based upon an example from the W3Schools HTML tutorial on Comments
+Author: W3Schools
+Location: URL
+Accessed: 13.05.2026
+need to credit music player !!!
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,9 +18,7 @@
         <header>
             <nav>
                 <ul>
-                    <!-- <text><b>memoriae</b></text> -->
                     <li><a href="index.html">home</a></li>
-                    <!--want it to scroll down to about section-->
                     <li><a href="index.html">about</a></li>
                     <li><a href="profile.html">profile</a></li>
                     <li><a href="addConcert.html">add concert</a></li>
@@ -49,6 +55,7 @@
                         <audio id="music-player"></audio>
                         <div class="progress">
                             <span id="current-time">0:00</span>
+                            <label for="seek-slider" class="sr-only">song progress</label>
                             <input type="range" id="seek-slider" min="0" value="0">
                             <span id="total-time"></span>
                         </div>
@@ -64,5 +71,3 @@
         <script src ="music.js"></script>
     </body>
 </html>
-
-<!-- i want a frutiger aero music player -->
